@@ -1,0 +1,18 @@
+{
+    "name": "getdkan/pdlt",
+    "description": "PHP Date Language Tool",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "PDLT\\": "src/",
+            "PDLT\\tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Clayton Liddell",
+            "email": "clayton.liddell@civicactions.com"
+        }
+    ],
+    "require": {}
+}
