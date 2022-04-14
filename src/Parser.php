@@ -4,6 +4,9 @@ namespace PDLT;
 
 /**
  * Date format parser.
+ *
+ * Use the supplied grammar to convert the supplied date format to an
+ * intermediary AST language with the same directive tokens as Strptime.
  */
 class Parser implements ParserInterface {
 
@@ -44,10 +47,10 @@ class Parser implements ParserInterface {
       // If the current character doesn't exist in this level of the AST, we
       // have no path to tokenizing this character...
       if (!isset($grammar_ptr[$char])) {
-        // If no valid AST character was found mid-token, the given frictionless
-        // format is invalid, and an exception should be thrown.
+        // If no valid AST character was found mid-token, the given format is
+        // invalid, and an exception should be thrown.
         if (strlen($literal) > 1) {
-          throw new UnknownTokenException(sprintf('Invalid frictionless format provided; unknown token "%s".', $literal));
+          throw new UnknownTokenException(sprintf('Invalid format provided; token "%s" not found in grammar "%s".', $literal, get_class($this->grammar)));
         }
         // Since we have no path to tokenize this character, we want to go back
         // to the top level of the AST...
@@ -85,7 +88,7 @@ class Parser implements ParserInterface {
    * Generate an Abstract Syntax Tree (AST) from the given date format.
    *
    * @param string $input
-   *   Frictionless date format.
+   *   Input date format.
    *
    * @return array
    *   Generated AST.

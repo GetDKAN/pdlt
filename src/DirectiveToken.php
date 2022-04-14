@@ -3,9 +3,9 @@
 namespace PDLT;
 
 /**
- * Frictionless/Strptime date format directive token.
+ * Date format directive token.
  *
- * E.g. '%a', '%w', '%d'...
+ * E.g. '%a', '%w', '%d'... (strptime)
  */
 class DirectiveToken extends LiteralToken implements TokenInterface {
 

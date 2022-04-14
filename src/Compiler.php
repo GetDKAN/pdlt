@@ -4,6 +4,9 @@ namespace PDLT;
 
 /**
  * Date format compiler.
+ *
+ * If an unsupported directive is encountered, an UnsupportedTokenException will
+ * be thrown.
  */
 class Compiler implements CompilerInterface {
 

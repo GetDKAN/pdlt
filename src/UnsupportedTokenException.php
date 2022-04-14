@@ -3,7 +3,7 @@
 namespace PDLT;
 
 /**
- * Exception thrown when an unsupported Frictionless date format token is found.
+ * Exception thrown when an unsupported date format token is found.
  */
 class UnsupportedTokenException extends \UnexpectedValueException {
 
