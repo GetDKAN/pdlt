@@ -65,7 +65,7 @@ class MySQL extends \ArrayObject implements CompilationMapInterface {
     // Hour (00 to 12).
     '%I' => '%I',
     // Numeric month name (0 to 12).
-    '%m' => '%c',
+    '%m' => '%m',
     // Minutes (00 to 59).
     '%M' => '%i',
     // AM or PM.
@@ -91,7 +91,7 @@ class MySQL extends \ArrayObject implements CompilationMapInterface {
     // Hour (1 to 12).
     '%-I' => '%l',
     // Month name as a numeric value (01 to 12).
-    '%-m' => '%m',
+    '%-m' => '%c',
     // Minutes (00 to 59).
     '%-M' => '%i',
     // Seconds (00 to 59).
