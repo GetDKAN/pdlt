@@ -74,6 +74,8 @@ class MySQL extends \ArrayObject implements CompilationMapInterface {
     '%S' => '%s',
     // Week where Sunday is the first day of the week (00 to 53).
     '%U' => '%U',
+    // Weekday as decimal value (0 to 6).
+    '%w' => '%w',
     // Week where Monday is the first day of the week (00 to 53).
     '%W' => '%u',
     // Year as a numeric, 2-digit value.

@@ -16,6 +16,7 @@ use PDLT\GrammarInterface;
  * |--------------------------------------------|--------------|
  * | Abbreviated weekday name (Sun to Sat)      | %a           |
  * | Abbreviated month name (Jan to Dec)        | %b           |
+ * | Locale date/time (e.g. 09/08/13 07:06:05)  | %c or %C     |
  * | Numeric month name (0 to 12)               | %m           |
  * | Numeric day of the month (01 to 31)        | %d           |
  * | Numeric day of the month (0 to 31)         | %-d          |
@@ -23,7 +24,8 @@ use PDLT\GrammarInterface;
  * | Hour (00 to 23)                            | %H           |
  * | Hour (00 to 12)                            | %I           |
  * | Minutes (00 to 59)                         | %M or %-M    |
- * | Day of the year (001 to 366)               | %j or %-j    |
+ * | Day of the year w/o zero padding (1 to 366)| %j           |
+ * | Day of the year (001 to 366)               | %-j          |
  * | Hour (0 to 23)                             | %-H          |
  * | Hour (1 to 12)                             | %-I          |
  * | Month name in full (January to December)   | %B           |
@@ -36,12 +38,11 @@ use PDLT\GrammarInterface;
  * | Numeric day of week where Sun=0 and Sat=6  | %w           |
  * | Year as a numeric, 4-digit value           | %Y           |
  * | Year as a numeric, 2-digit value           | %y           |
- * | A literal '%' character                    | %%           |
- * | Locale date/time (e.g. 09/08/13 07:06:05)  | %c           |
  * | Locale’s date (e.g. 09/08/13)              | %x           |
  * | Locale’s time (e.g. 07:06:05)              | %X           |
  * | UTC offset ±HHMM[SS[.ffffff]] (e.g. +0000) | %z           |
  * | Time zone name (e.g. UTC)                  | %Z           |
+ * | A literal '%' character                    | %%           |
  */
 class Strptime extends \ArrayObject implements GrammarInterface {
 
@@ -58,6 +59,7 @@ class Strptime extends \ArrayObject implements GrammarInterface {
       'b' => '%b',
       // Locale date/time (e.g. 09/08/13 07:06:05).
       'c' => '%c',
+      'C' => '%c',
       // Month name in full (January to December).
       'B' => '%B',
       // Day of the month as a numeric value (01 to 31).
@@ -68,6 +70,8 @@ class Strptime extends \ArrayObject implements GrammarInterface {
       'H' => '%H',
       // Hour (00 to 12).
       'I' => '%I',
+      // Day of the year without zero padded value (1 to 366).
+      'j' => '%j',
       // Numeric month name (0 to 12).
       'm' => '%m',
       // Minutes (00 to 59).
@@ -78,6 +82,8 @@ class Strptime extends \ArrayObject implements GrammarInterface {
       'S' => '%S',
       // Week where Sunday is the first day of the week (00 to 53).
       'U' => '%U',
+      // Weekday as decimal value (0 to 6).
+      'w' => '%w',
       // Week where Monday is the first day of the week (00 to 53).
       'W' => '%W',
       // Locale’s date (e.g. 09/08/13).
