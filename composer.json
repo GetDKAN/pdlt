@@ -20,7 +20,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "PDLT\\": "src/"
+            "PDLT\\tests\\": "tests/"
         }
     },
     "scripts": {
