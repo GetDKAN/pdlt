@@ -18,7 +18,7 @@ class ConverterTest extends TestCase {
   /**
    * Test convert() in parent class.
    */
-  public function testStrptimeToMySQLConverter() {
+  public function testStrptimeToMySqlConverter() {
     $grammar = new StrptimeGrammar();
     $strptime_parser = new Parser($grammar);
     $mysql_compilation_map = new MySQLCompilationMap();

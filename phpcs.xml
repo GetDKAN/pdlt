@@ -8,7 +8,7 @@
     <file>tests</file>
     <file>rector.php</file>
 
-    <rule ref="PSR1"/>
-    <rule ref="PSR2"/>
+    <rule ref="Drupal"/>
+    <rule ref="DrupalPractice"/>
 
 </ruleset>
