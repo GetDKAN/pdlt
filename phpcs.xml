@@ -8,7 +8,10 @@
     <file>tests</file>
     <file>rector.php</file>
 
-    <rule ref="Drupal"/>
+    <rule ref="Drupal">
+        <exclude name="Drupal.Commenting.FunctionComment.Missing"/>
+        <exclude name="Drupal.Commenting.DocComment.MissingShort"/>
+    </rule>
     <rule ref="DrupalPractice"/>
 
 </ruleset>
