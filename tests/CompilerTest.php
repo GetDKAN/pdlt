@@ -32,7 +32,7 @@ class CompilerTest extends TestCase {
   /**
    * @covers ::compileDirective
    */
-  public function testCompileDirectiveExcpetion() {
+  public function testCompileDirectiveException() {
     $this->expectException(UnsupportedTokenException::class);
     $this->expectExceptionMessage('Unable to compile unsupported directive "this-directive-should-not-exist"; not found in compilation map "PDLT\CompilationMap\MySQL".');
 
