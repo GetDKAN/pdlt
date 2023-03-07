@@ -61,7 +61,7 @@ class Compiler implements CompilerInterface {
    *   Compiled token string.
    *
    * @throws \PDLT\UnsupportedTokenException
-   *   When the supplied token is not supported by the this compiler's
+   *   When the supplied token is not supported by the compiler's
    *   compilation map.
    */
   protected function compileDirective(DirectiveToken $token): string {

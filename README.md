@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/e7bf8f7b56a6f1bf4c68/maintainability)](https://codeclimate.com/github/GetDKAN/pdlt/maintainability) | [![Test Coverage](https://api.codeclimate.com/v1/badges/e7bf8f7b56a6f1bf4c68/test_coverage)](https://codeclimate.com/github/GetDKAN/pdlt/test_coverage)
+
 # PHP Date Language Tool
 
 A simple parser generator for reading, processing, or translating regular date language formats.
