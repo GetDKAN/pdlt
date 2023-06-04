@@ -13,7 +13,7 @@ class Parser implements ParserInterface {
   /**
    * Creates a date format parser.
    *
-   * @param \PDLT\GrammarInterface $grammar
+   * @param GrammarInterface $grammar
    *   Grammar for date format being parsed.
    */
   public function __construct(GrammarInterface $grammar) {
@@ -31,7 +31,7 @@ class Parser implements ParserInterface {
    * @param string $input_format
    *   Date format string to lex.
    *
-   * @return \PDLT\TokenInterface[]
+   * @return TokenInterface[]
    *   AST token list.
    */
   protected function lex(string $input_format): array {

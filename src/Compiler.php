@@ -13,14 +13,14 @@ class Compiler implements CompilerInterface {
   /**
    * Simple single dimensional map of token literals to output token strings.
    *
-   * @var \PDLT\CompilationMapInterface
+   * @var CompilationMapInterface
    */
   protected CompilationMapInterface $compilationMap;
 
   /**
    * Builds a date format compiler.
    *
-   * @param \PDLT\CompilationMapInterface $compilation_map
+   * @param CompilationMapInterface $compilation_map
    *   Date format compilation map.
    */
   public function __construct(CompilationMapInterface $compilation_map) {
@@ -30,13 +30,13 @@ class Compiler implements CompilerInterface {
   /**
    * Convert the supplied token to it's string equivalent using compilation map.
    *
-   * @param \PDLT\TokenInterface $token
+   * @param TokenInterface $token
    *   Lexical token.
    *
    * @return string
    *   Compiled token string.
    *
-   * @throws \PDLT\UnsupportedTokenException
+   * @throws UnsupportedTokenException
    *   When a token of a type not supported by this compiler is encountered.
    */
   protected function compileToken(TokenInterface $token): string {
@@ -54,13 +54,13 @@ class Compiler implements CompilerInterface {
   /**
    * Compile a directive token to it's string equivalent.
    *
-   * @param \PDLT\DirectiveToken $token
+   * @param DirectiveToken $token
    *   Directive token.
    *
    * @return string
    *   Compiled token string.
    *
-   * @throws \PDLT\UnsupportedTokenException
+   * @throws UnsupportedTokenException
    *   When the supplied token is not supported by the compiler's
    *   compilation map.
    */
@@ -76,7 +76,7 @@ class Compiler implements CompilerInterface {
   /**
    * Compile a literal token to a string.
    *
-   * @param \PDLT\LiteralToken $token
+   * @param LiteralToken $token
    *   Literal token.
    *
    * @return string
