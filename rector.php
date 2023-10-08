@@ -7,8 +7,14 @@
 
 declare(strict_types=1);
 
+use Rector\CodeQuality\Rector\Class_\CompleteDynamicPropertiesRector;
 use Rector\Config\RectorConfig;
-use Rector\Set\ValueObject\LevelSetList;
+use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
+use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
+use Rector\DeadCode\Rector\Property\RemoveUselessVarTagRector;
+use Rector\Php73\Rector\FuncCall\JsonThrowOnErrorRector;
+use Rector\PHPUnit\Rector\MethodCall\GetMockBuilderGetMockToCreateMockRector;
+use Rector\Set\ValueObject\SetList;
 
 return static function (RectorConfig $rectorConfig): void {
   $rectorConfig->paths([
@@ -16,7 +22,34 @@ return static function (RectorConfig $rectorConfig): void {
     __DIR__ . '/tests',
   ]);
 
-  $rectorConfig->sets([
-    LevelSetList::UP_TO_PHP_74,
+  $rectorConfig->rules([
+    CompleteDynamicPropertiesRector::class,
   ]);
+
+  $rectorConfig->sets([
+    // Please no dead code or unneeded variables.
+    SetList::DEAD_CODE,
+    // Try to figure out type hints.
+    SetList::TYPE_DECLARATION,
+    // Interestingly, LevelSetList::UP_TO_PHP_82 does not preserve PHP 7.4,
+    // so we have to specify all the PHP versions leading up to it if we
+    // want to keep 7.4 idioms.
+    SetList::PHP_74,
+    SetList::PHP_80,
+    SetList::PHP_81,
+    SetList::PHP_82,
+  ]);
+
+  $rectorConfig->skip([
+    // Keep getMockBuilder() for now.
+    GetMockBuilderGetMockToCreateMockRector::class,
+    // Don't throw errors on JSON parse problems. Yet.
+    // @todo Throw errors and deal with them appropriately.
+    JsonThrowOnErrorRector::class,
+    // We like our tags.
+    RemoveUselessParamTagRector::class,
+    RemoveUselessVarTagRector::class,
+    RemoveUselessReturnTagRector::class,
+  ]);
+
 };

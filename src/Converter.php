@@ -12,6 +12,16 @@ namespace PDLT;
 class Converter implements ConverterInterface {
 
   /**
+   * @var \PDLT\ParserInterface
+   */
+  public $parser;
+
+  /**
+   * @var \PDLT\CompilerInterface
+   */
+  public $compiler;
+
+  /**
    * Build date format converter using the given parser and compiler.
    */
   public function __construct(ParserInterface $parser, CompilerInterface $compiler) {

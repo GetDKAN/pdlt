@@ -11,6 +11,11 @@ namespace PDLT;
 class Parser implements ParserInterface {
 
   /**
+   * @var \PDLT\GrammarInterface
+   */
+  public $grammar;
+
+  /**
    * Creates a date format parser.
    *
    * @param \PDLT\GrammarInterface $grammar
