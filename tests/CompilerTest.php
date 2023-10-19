@@ -2,9 +2,9 @@
 
 namespace PDLT\Tests;
 
-use PDLT\Compiler;
-use PDLT\CompilationMapInterface;
 use PDLT\CompilationMap\MySQL;
+use PDLT\CompilationMapInterface;
+use PDLT\Compiler;
 use PDLT\DirectiveToken;
 use PDLT\TokenInterface;
 use PDLT\UnsupportedTokenException;
@@ -18,7 +18,7 @@ class CompilerTest extends TestCase {
   /**
    * @covers ::compileToken
    */
-  public function testCompileTokenException() {
+  public function testCompileTokenException(): void {
     $this->expectException(UnsupportedTokenException::class);
     $this->expectExceptionMessage('Unable to compile unsupported token type');
 
@@ -32,7 +32,7 @@ class CompilerTest extends TestCase {
   /**
    * @covers ::compileDirective
    */
-  public function testCompileDirectiveException() {
+  public function testCompileDirectiveException(): void {
     $this->expectException(UnsupportedTokenException::class);
     $this->expectExceptionMessage('Unable to compile unsupported directive "this-directive-should-not-exist"; not found in compilation map "PDLT\CompilationMap\MySQL".');
 

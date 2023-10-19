@@ -2,12 +2,11 @@
 
 namespace PDLT\Tests;
 
-use PDLT\Converter;
-use PDLT\Parser;
-use PDLT\Compiler;
-use PDLT\Grammar\Strptime;
 use PDLT\CompilationMap\MySQL;
-
+use PDLT\Compiler;
+use PDLT\Converter;
+use PDLT\Grammar\Strptime;
+use PDLT\Parser;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,7 +14,7 @@ use PHPUnit\Framework\TestCase;
  */
 class ConverterTest extends TestCase {
 
-  public function provideFormats() {
+  public function provideFormats(): array {
     return [
       'from-readme' => ['%c/%e/%y', '%-m/%-d/%y'],
       ['%a', '%a'],
@@ -50,7 +49,7 @@ class ConverterTest extends TestCase {
   /**
    * @dataProvider provideFormats
    */
-  public function testStrptimeToMySqlConverter($expected, $input_format) {
+  public function testStrptimeToMySqlConverter(string $expected, string $input_format): void {
     $converter = new Converter(
       new Parser(new Strptime()),
       new Compiler(new MySQL())

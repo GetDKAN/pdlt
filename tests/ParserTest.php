@@ -16,7 +16,7 @@ class ParserTest extends TestCase {
    * @covers ::lex
    * @see https://www.php.net/manual/en/function.strftime.php
    */
-  public function testLexException() {
+  public function testLexException(): void {
     $this->expectException(UnknownTokenException::class);
     $this->expectExceptionMessage('Invalid format provided; token "%i" not found in grammar "PDLT\Grammar\Strptime".');
 
