@@ -20,6 +20,7 @@ return static function (RectorConfig $rectorConfig): void {
   $rectorConfig->paths([
     __DIR__ . '/src',
     __DIR__ . '/tests',
+    __FILE__,
   ]);
 
   $rectorConfig->rules([
@@ -27,6 +28,7 @@ return static function (RectorConfig $rectorConfig): void {
   ]);
 
   $rectorConfig->sets([
+    SetList::PHP_74,
     // Please no dead code or unneeded variables.
     SetList::DEAD_CODE,
     // Try to figure out type hints.
@@ -34,10 +36,6 @@ return static function (RectorConfig $rectorConfig): void {
     // Interestingly, LevelSetList::UP_TO_PHP_82 does not preserve PHP 7.4,
     // so we have to specify all the PHP versions leading up to it if we
     // want to keep 7.4 idioms.
-    SetList::PHP_74,
-    SetList::PHP_80,
-    SetList::PHP_81,
-    SetList::PHP_82,
   ]);
 
   $rectorConfig->skip([
