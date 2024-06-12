@@ -2,6 +2,7 @@
     "name": "getdkan/pdlt",
     "description": "PHP Date Language Tool",
     "type": "library",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Clayton Liddell",
