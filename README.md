@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/e7bf8f7b56a6f1bf4c68/maintainability)](https://codeclimate.com/github/GetDKAN/pdlt/maintainability) | [![Test Coverage](https://api.codeclimate.com/v1/badges/e7bf8f7b56a6f1bf4c68/test_coverage)](https://codeclimate.com/github/GetDKAN/pdlt/test_coverage)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/GetDKAN/pdlt/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/GetDKAN/pdlt/tree/master) [![Maintainability](https://qlty.sh/gh/GetDKAN/projects/pdlt/maintainability.svg)](https://qlty.sh/gh/GetDKAN/projects/pdlt) [![Code Coverage](https://qlty.sh/gh/GetDKAN/projects/pdlt/coverage.svg)](https://qlty.sh/gh/GetDKAN/projects/pdlt)
 
 # PHP Date Language Tool
 
